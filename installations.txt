@@ -1,0 +1,5 @@
+stormpath install
+npm install -g express-generator
+express --css stylus stormpath-express-sample
+
+npm install passport passport-stormpath express-session connect-flash stormpath --save

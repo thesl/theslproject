@@ -1,0 +1,40 @@
+extends layout
+
+block body
+  #welcome.jumbotron
+    h1 Welcome to TheSellerList
+    p.lead.
+      <br/>
+      <br/>
+      Wondering what your friends or their friends are selling? Look no more, welcome to The Seller List! This is your one stop community for trading. A network for sellers and buyers. Buy stuff from people you trust. Sell stuff to people you are connected with. The world is more connected now than it was ever before. We have built our circles of trust - friends whose ideas and opinions we value. Why not extend this trust to sell and buy things amongst each other? The bigger the network, bigger the possibilities. We could trade stuff with our trusted friends and subsequently extend the network to our friends' friends and increase the number of people we deal with. The goal is to build a network founded on trust, nurtured with successful sales and purchases
+    <br/>
+    p.bigbutton
+      a.bigbutton.btn.btn-lg.btn-danger(href='/register', role='button') Register
+  .login
+    .row
+      .col-lg-6.col-lg-offset-3
+        form.bs-example.form-horizontal(method='post', action='')
+          fieldset
+            legend Login
+            if error
+              .alert.alert-dismissable.alert-danger.login-fail
+                button.close(type='button', data-dismiss='alert') &times;
+                p.
+                  #{error}
+            p.last-p.
+              Once you enter your credentials and hit the Login button below,
+              your credentials will be securely sent to
+              <a href="https://stormpath.com">Stormpath</a> and verified.  If
+              your credentials are valid, you'll be logged in using a secure
+              session -- otherwise, you'll get a user friendly error message.
+            .form-group
+              label.col-lg-4.control-label(for='username') Email
+              .col-lg-4
+                input#username.form-control(type='email', name='username', placeholder='Email', autofocus)
+            .form-group
+              label.col-lg-4.control-label(for='password') Password
+              .col-lg-4
+                input#password.form-control(type='password', name='password', placeholder='Password')
+            .form-group
+              .col-lg-10.col-lg-offset-4
+                button.btn.btn-primary(type='submit') Login

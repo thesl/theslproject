@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(content='IE=edge', http-equiv='X-UA-Compatible')
+    meta(content='width=device-width, initial-scale=1', name='viewport')
+    title= 'Express-Stormpath (sample) | ' + title
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css')
+    link(href='/css/style.css', rel='stylesheet')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+    script(src='/javascripts/salePost.js')
+
+    <!--[if lt IE 9 ]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  body
+    .container-fluid
+      .seller-post
+        .row
+          .form-horizontal(method='post', action='')
+            .col-lg-6
+            #sellerPost
+              fieldset <!--[used to group related elements in a form] -->
+                .form-group
+                  label.col-lg-4.control-label(for='post-description') Description
+                  .col-lg-8
+                    textarea#post-description.form-control(rows= '3', name='post-description', type='post-description', placeholder='post-description', autofocus)
+                .form-group
+                  label.col-lg-4.control-label(for='cost') Cost
+                  .col-lg-8
+                    input#cost.form-control(name='cost', type='cost', placeholder='Cost')
+                .form-group
+                  .col-lg-10.col-lg-offset-4
+                    button.btn.btn-primary(type='Post', id="postButton") Post                         
