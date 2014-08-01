@@ -37,13 +37,17 @@ router.post('/addPost', function (req,res) {
     });
 });
 
-router.get('/getPosts', function(req, res){
+router.get('/getPosts', function (req, res) {
    var db = req.db;
-   db.collection('postList').findOne({userid: 1}, function(err, result) {
-    //   alert(result[0]);
-       res.send(
-            (err === null) ? { msg: result } : { msg: err }
-        );
+   db.collection('sellerpost_details').find({creator_id: 1}, function(err, result) {
+       if(err === null) {
+          result.toArray(function (req, data) {
+             console.log(data);
+             res.send( { msg : data} );
+          });
+       } else{
+          res.send( { msg: err } );
+       }
    });
 });
 module.exports = router;
